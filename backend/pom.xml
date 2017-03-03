@@ -95,6 +95,9 @@
                         to produce a separate artifact that is suitable for use as a dependency.
                         See http://docs.spring.io/spring-boot/docs/1.4.x/reference/htmlsingle/#howto-create-an-additional-executable-jar -->
                     <classifier>exec</classifier>
+                    <jvmArguments>
+                        -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005
+                    </jvmArguments>
                 </configuration>
             </plugin>
             <!-- Plugin to create releases: Use ./mvnw release:clean release:prepare
