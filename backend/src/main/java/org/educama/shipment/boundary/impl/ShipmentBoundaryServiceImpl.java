@@ -16,12 +16,17 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Collection;
 import java.util.UUID;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Boundary service implementation for shipments.
  */
 @Service
 @Transactional(readOnly = true)
 public class ShipmentBoundaryServiceImpl implements ShipmentBoundaryService {
+
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     private CompleteShipmentOrderTask completeShipmentOrderTask;
 
@@ -46,6 +51,7 @@ public class ShipmentBoundaryServiceImpl implements ShipmentBoundaryService {
     @Override
     public Shipment createShipment(Shipment shipment) {
         shipment.trackingId = UUID.randomUUID().toString();
+
         Shipment createdShipment = shipmentRepository.saveAndFlush(shipment);
         shipmentCaseControlService.create(shipment.trackingId);
         return createdShipment;

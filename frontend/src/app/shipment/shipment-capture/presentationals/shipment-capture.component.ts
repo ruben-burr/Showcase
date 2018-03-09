@@ -67,6 +67,7 @@ export class ShipmentCaptureComponent implements OnInit, DoCheck {
             numberPackages: ["", [Validators.pattern("[0-9]+")]],
             totalWeight: ["", [Validators.pattern("[0-9]+")]],
             totalCapacity: ["", [Validators.pattern("[0-9]+")]],
+            cargoValue: ["", [Validators.pattern("[0-9]+")]],
             cargoDescription: [""],
             dangerousGoods: [""],
             preCarriage: [""],
@@ -163,6 +164,7 @@ export class ShipmentCaptureComponent implements OnInit, DoCheck {
             this.shipmentCaptureForm.get("totalCapacity").value,
             this.shipmentCaptureForm.get("dangerousGoods").value,
             this.shipmentCaptureForm.get("numberPackages").value,
+            this.shipmentCaptureForm.get("cargoValue").value
         );
 
         const shipmentServices = new ShipmentServices(

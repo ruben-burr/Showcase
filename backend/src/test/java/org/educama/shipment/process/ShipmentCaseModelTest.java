@@ -63,7 +63,7 @@ public class ShipmentCaseModelTest extends AbstractProcessEngineRuleTest {
         shipment.sender = new Customer("Zaphood Beeblebrox", new Address("Zaphodsstreet", "42", "12342", "Beitegeuze"));
         customerRepository.save(shipment.sender);
 
-        shipment.shipmentCargo = new Cargo(null, 2.0, 123.0, "Don't Panic!", true);
+        shipment.shipmentCargo = new Cargo(null, 2.0, 123.0, "Don't Panic!", true, 100.0);
         shipment.shipmentServices = new Services(false, false, false, true, false, false, true);
         shipmentRepository.save(shipment);
 
@@ -149,7 +149,7 @@ public class ShipmentCaseModelTest extends AbstractProcessEngineRuleTest {
                 .isEnabled());
 
         Shipment shipment2 = shipmentRepository.findOne(this.shipmentId);
-        shipment2.shipmentCargo = new Cargo(1, 2.0, 123.0, "Don't Panic!", true);
+        shipment2.shipmentCargo = new Cargo(1, 2.0, 123.0, "Don't Panic!", true, 100.0);
         shipmentRepository.save(shipment2);
 
         // Complete task 'Complete shipment order'

@@ -17,6 +17,8 @@ public class CargoDS {
 
     public Boolean dangerousGoods;
 
+    public Double value;
+
     /*
      * For Jackson Parser
      */
@@ -29,18 +31,20 @@ public class CargoDS {
         this.totalWeight = cargo.totalWeight;
         this.totalCapacity = cargo.totalCapacity;
         this.cargoDescription = cargo.cargoDescription;
+        this.value = cargo.value;
     }
 
-    public CargoDS(Integer numberPackages, Double totalWeight, Double totalCapacity, String cargoDescription, Boolean dangerousGoods) {
+    public CargoDS(Integer numberPackages, Double totalWeight, Double totalCapacity, String cargoDescription, Boolean dangerousGoods, Double value) {
         this.numberPackages = numberPackages;
         this.totalWeight = totalWeight;
         this.totalCapacity = totalCapacity;
         this.cargoDescription = cargoDescription;
         this.dangerousGoods = dangerousGoods;
+        this.value = value;
     }
 
     public Cargo toCargo() {
-        return new Cargo(this.numberPackages, this.totalWeight, this.totalCapacity, this.cargoDescription, this.dangerousGoods);
+        return new Cargo(this.numberPackages, this.totalWeight, this.totalCapacity, this.cargoDescription, this.dangerousGoods, this.value);
     }
 
 }

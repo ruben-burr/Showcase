@@ -265,7 +265,7 @@
 			"headers": "Content-Type: application/json",
 			"dataMode": "raw",
 			"data": [],
-			"rawModeData": "{\n  \"customer\": \"NovaTec Consulting GmbH\",\n  \"senderAddress\": \"Dieselstr. 18/1, 70771 Leinfelden-Echterdingen\",\n  \"receiverAddress\": \"Santa Claus Main Post Office, FI-96930 Arctic Circle, Finland\"\n}",
+			"rawModeData": "{\n  \"uuidSender\": \"b56b3d3c-2552-4fb4-8295-6dc0843e5509\",\n  \"uuidReceiver\": \"99e6b1ed-a27b-4702-8a63-83dbba054f47\",\n  \"shipmentCargo\": {\n  \t\"numberPackages\": 3,\n  \t\"totalWeight\": 10.0,\n    \"totalCapacity\": 20.0,\n    \"cargoDescription\": \"Description\",\n    \"dangerousGoods\": true,\n    \"value\": 100.0\n  },\n  \"shipmentServices\": {\n  \t\"preCarriage\": true,\n\t\"exportInsurance\": true,\n\t\"exportCustomsClearance\": true,\n\t\"flight\": true,\n\t\"importInsurance\": true,\n\t\"importCustomsClearance\": true,\n\t\"onCarriage\": true\n  },\n  \"customerTypeEnum\": \"SENDER\"\n}",
 			"pathVariables": {},
 			"url": "http://localhost:8081/educama/v1/shipments",
 			"responses": [],

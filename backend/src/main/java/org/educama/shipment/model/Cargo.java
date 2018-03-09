@@ -18,6 +18,8 @@ public class Cargo {
 
     public Boolean dangerousGoods;
 
+    public Double value;
+
     /**
      * Constructor for JPA.
      */
@@ -26,11 +28,12 @@ public class Cargo {
     }
 
     public Cargo(Integer numberPackages, Double totalWeight, Double totalCapacity, String cargoDescription,
-            Boolean dangerousGoods) {
+            Boolean dangerousGoods, Double value) {
         this.numberPackages = numberPackages;
         this.totalWeight = totalWeight;
         this.totalCapacity = totalCapacity;
         this.cargoDescription = cargoDescription;
         this.dangerousGoods = dangerousGoods;
+        this.value = value;
     }
 }
